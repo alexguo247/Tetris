@@ -1,39 +1,98 @@
-import React, {useState, useEffect}  from 'react';
-import Tetromino from './Tetromino';
-import {ROWS, COLS, BLOCK_SIZE} from '../constants';
-import './Board.css';
+import React, {useState, useEffect, useCallback}  from 'react';
+import Cell from './Cell';
+import {ROWS, COLS} from '../constants';
+import '../index.css';
 
-const Board = () => {
-    let grid;
-    const createBoard = () => {
-        Array.from(Array(ROWS), () =>
-            new Array(COLS).fill([0, 'clear'])
-        )
+const Board = (props) => {
+
+  /*---------------- STATE ---------------- */
+  //Defining board variable 
+  const [grid, changeGrid] = useState(createBoard());
+  //User action variable
+  const [action, setAction] = useState('DOWN'); 
+  //Tetromino variable
+  const [tCoords, setTCoords] = useState('[0, 15]')
+
+
+  /*---------------- IMPORTANT FUNCTIONS ----------------*/
+  //Create Board Function
+  const createBoard = () => {
+    return Array.from({ length: ROWS }, () => Array(COLS).fill(0));
+  } 
+  //Valid Move Function
+  const validMove = () => {
+    
+  }
+
+  
+
+  const movement = useCallback((event) => {
+    //Left
+    if(event.keyCode === 37) {
+      setAction('LEFT');
     }
-    const isEmpty = (x,y) => {
-        return grid[y] && grid[y][x] === 0;
+    //Up (rotate clockwise)
+    if(event.keyCode === 38) {
+      setAction('ROTATE');
+    }
+    //Right
+    if(event.keyCode === 39) {
+      setAction('UP');
+    }
+    //Down
+    if(event.keyCode === 40) {
+      setAction('DOWN');
+    }
+    //Space
+    if(event.keyCode === 32){
+      setAction('DROP');
     }
 
-    const rotate = (piece) => {
-        // Clone with JSON for immutability.
-        let p = JSON.parse(JSON.stringify(piece));
-        // Transpose matrix
-        for (let y = 0; y < p.shape.length; ++y) {
-          for (let x = 0; x < y; ++x) {
-            [p.shape[x][y], p.shape[y][x]] = [p.shape[y][x], p.shape[x][y]];
-          }
-        }
-        // Reverse the order of the columns.
-        p.shape.forEach(row => row.reverse());
-        return p;
-    }
+  }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-          console.log('This will run every second!');
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
+  useEffect(() => {
+    document.addEventListener("keydown", movement, false);
+    return () => {
+      document.removeEventListener("keydown", movement, false);
+    };
+  }, []);
+
+  const rotateTetromino = (num) => {
+
+  }
+
+  const hardDrop = () => {
+
+  }
+
+  const moveTetromino = () => {
+    let x = tCoords[0];
+    let y = tCoords[1];
+    switch(action)
+    {
+      case 'RIGHT':
+        x += 1;
+        break;
+      case 'LEFT':
+        x-=1;
+        break;
+      case 'DOWN':
+        y-=1;
+        break;
+      case 'ROTATE':
+        rotateTetromino();
+        break;
+      case 'DROP':
+        hardDrop();
+        break;
+    }
+  }
+
+  return (
+    <div className="board">
+      <Cell coordinates={tCoords}/>
+    </div>  
+  )
 }
 
 export default Board;

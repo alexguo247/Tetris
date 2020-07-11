@@ -11,7 +11,10 @@ const Board = (props) => {
   //User action variable
   const [action, setAction] = useState('DOWN'); 
   //Tetromino variable
-  const [tCoords, setTCoords] = useState('[0, 15]')
+  const [tCoords, setTCoords] = useState('[0, 15]');
+  //Game over variable
+  const [gameOver, setGameOver] = useState(false);
+
 
 
   /*---------------- IMPORTANT FUNCTIONS ----------------*/
@@ -20,8 +23,22 @@ const Board = (props) => {
     return Array.from({ length: ROWS }, () => Array(COLS).fill(0));
   } 
   //Valid Move Function
-  const validMove = () => {
-    
+  const validMove = (player, {x: moveX, y: moveY}) => {
+    for(let y = 0; y < player.tetromino.length; y++)
+    {
+      for(let x = 0; x < player.tetromino[y].length; x++)
+      {
+        if(player.tetromino[y][x] !== 0)
+        {
+          if(
+            
+          ){
+            return true;
+          }
+        }
+      }
+    }
+    return false;
   }
 
   

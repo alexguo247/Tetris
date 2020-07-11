@@ -1,55 +1,70 @@
 export const COLS = 10;
 export const ROWS = 20;
-export const BLOCK_SIZE = 30;
-export const COLORS = 
-[
-    'cyan',
-    'blue',
-    'orange',
-    'yellow',
-    'green',
-    'red',
-    'purple' 
-];
 export const SHAPES =
-[
+{
+    DEFAULT: {
+        shape: [[0]],
+        color: 'white',
     //I-Shape
-    [
-        [0, 1, 0, 0]
-        [0, 1, 0, 0]
-        [0, 1, 0, 0]
-        [0, 1, 0, 0]
-    ],
+    },
+    I: {
+        shape: [
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+        ],
+        color: 'cyan',
+    },
+
     //L-Shape
-    [
-        [1, 0, 0]
-        [1, 0, 0]
-        [1, 1, 0]
-    ],
+    L: {
+        shape: [
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 1, 0],
+        ],
+        color: 'blue',
+    },
     //Mirrored L-Shape
-    [
-        [0, 0, 1]
-        [0, 0, 1]
-        [0, 1, 1]
-    ],
+    J: {
+        shape: [
+            [0, 0, 1],
+            [0, 0, 1],
+            [0, 1, 1],
+        ],
+        color: 'orange',
+    },
     //O-Shape
-    [
-        [1, 1]
-        [1, 1]
-    ]
+    O: {
+        shape: [
+            [1, 1],
+            [1, 1],
+        ],
+        color: 'yellow',
+    },
     //Z-Shape
-    [
-        [1, 1, 0]
-        [0, 1, 1]
-    ]
+    Z: {
+        shape: [
+            [1, 1, 0],
+            [0, 1, 1],
+        ],
+        color: green,
+    },
     //S-Shape
-    [
-        [0, 1, 1]
-        [1, 1, 0]
-    ]
-    //T-Shaoe
-    [
-        [0, 1, 0]
-        [1, 1, 1]
-    ]
-]
+    S: {
+        shape: [
+            [0, 1, 1],
+            [1, 1, 0],
+        ],
+        color: red,
+    },
+    //T-Shape
+    T: {
+        shape: [
+            [0, 1, 0],
+            [1, 1, 1],
+        ],
+        color: purple,
+    }
+};

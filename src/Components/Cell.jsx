@@ -10,6 +10,8 @@ const Cell = (props) => {
     const [tetromino, displayTetromino] = useState(getRandomTetromino());
     const coordinates = props.coordinates;
 
+    
+
     return(
         <div>
             {coordinates.map((dot, i) => {

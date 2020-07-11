@@ -8,7 +8,9 @@ const Player = () => {
             y: 0
         },
         type: SHAPES[0].shape,
-        collided: false
+        dropped: false
     })
+    
+
 }
 export default Player;

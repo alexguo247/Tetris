@@ -1,0 +1,24 @@
+body {
+    background: white;
+}
+#title {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 60px;
+    color: black;
+    text-align: center;
+}
+#score {
+    position: fixed;
+    top: 20%;
+    left: 60%;
+    color: black;
+    text-align: center;
+}
+#tetris {
+    border: solid 1px black;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}

@@ -45,4 +45,5 @@ export const combineMatrices = (dest, src, offsetX = 0, offsetY = 0, overwrite =
             return value;
         })
     })
+    return newMatrix;
 }

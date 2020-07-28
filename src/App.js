@@ -1,10 +1,16 @@
 import React from 'react';
-import Board from './Components/Board';
-
+import ScriptTag from 'react-script-tag';
+import './app.css';
 const App = () => {
   
   return (
-    <Board/>
+    <>
+        <ScriptTag type="text/javascript" src="./Components/player.js" />
+        <ScriptTag type="text/javascript" src="./Components/board.js" />
+        <ScriptTag type="text/javascript" src="./Components/tetris.js" />
+        <ScriptTag type="text/javascript" src="./Components/main.js" />
+    </>
+    
   );
 } 
 

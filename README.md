@@ -2,7 +2,7 @@ Tetris Made With React
 
 As a huge fan and longtime Tetris player, I wanted to learn more about React while creating something familiar and interactive. Although I know now that the React framework is not suited towards playing games, it was a fun experience. The demo is shown below.
 
-![Tetris-Demo](https://media.giphy.com/media/UUys0oD6g8vi3UAgb6/giphy.gif)
+                                        ![Tetris-Demo](https://media.giphy.com/media/UUys0oD6g8vi3UAgb6/giphy.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

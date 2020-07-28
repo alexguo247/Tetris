@@ -101,6 +101,10 @@ class Main extends React.Component{
     }
 
     updateScore(){
+        document.getElementById('score-score').innerText = player.score;
+    }
+
+    updateScore(){
         document.getElementById('score').innerText = "Score: " + player.score;
     }
 
@@ -140,7 +144,7 @@ class Main extends React.Component{
         })
     }
 
-    update();
+    updateRow();
     updateScore();
 
     render() {

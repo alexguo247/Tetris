@@ -38,6 +38,7 @@ class Board {
   //Row sweep function when a full row is filled with tetromino pieces
   sweep(){
     let rowCount = 1;
+    let rowCountScore = rowCount;
     outer: for (let y = this.matrix.length - 1; y > 0; y--)
     {
       for(let x = 0; x < this.matrix[y].length; x++)
@@ -50,8 +51,9 @@ class Board {
       const row = this.matrix.splice(y, 1)[0].fill(0);
       this.matrix.unshift(row);
       y++;
-      player.score += rowCount * 10;
-      rowCount *= 2;
+      player.score += rowCountScore * 10;
+      player.rows += rowCount;
+      rowCountScore *= 2;
     }
   }
 

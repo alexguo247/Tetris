@@ -11,6 +11,7 @@ class Player {
         }
         this.matrix = null;
         this.score = 0;
+        this.rows = 0;
         this.reset();
     }
     
@@ -44,6 +45,7 @@ class Player {
             this.reset();
             board.sweep();
             updateScore();
+            updateRow();
         }
         this.dropCounter = 0;
     }
@@ -57,6 +59,7 @@ class Player {
         this.reset();
         board.sweep();
         updateScore();
+        updateRow();
         this.dropCounter = 0;
     }
 
@@ -76,6 +79,7 @@ class Player {
             board.clear();
             this.score = 0;
             updateScore();
+            updateRow();
         }
     }
 

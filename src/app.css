@@ -7,17 +7,38 @@ body {
     color: black;
     text-align: center;
 }
-#score {
+#score-title {
+    font-family: 'Oswald', sans-serif;
     position: fixed;
-    top: 20%;
-    left: 60%;
+    top: 40%;
+    left: 61%;
     color: black;
     text-align: center;
+    font-size: 48px;
+    border: black;
+    border-width: 1px;
+}
+#score-score {
+    font-size: 32px;
+}
+#row-title {
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 20%;
+    left: 61.3%;
+    color: black;
+    text-align: center;
+    font-size: 48px;
+    border: black;
+    border-width: 1px;
+}
+#row-count {
+    font-size: 32px;
 }
 #tetris {
     border: solid 1px black;
-    position: fixed;
-    top: 45%;
+    position: absolute;
+    top: 42%;
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);

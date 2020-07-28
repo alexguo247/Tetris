@@ -1,7 +1,6 @@
 import React from 'react';
 import Board from './board';
 import Player from './player';
-import Tetris from './tetris';
 
 class Main extends React.Component{
     constructor () {
@@ -26,15 +25,7 @@ class Main extends React.Component{
             requestAnimationFrame(update); //Update canvas
         }
     }
-    const canvas = document.getElementById('tetris');
-    const context = canvas.getContext('2d');
-    context.scale(30, 30);
-
-    
-
-    
-
-    const createPiece = type => {
+    createPiece(type) {
         if(type === 'T'){
         return [
             [0, 0, 0],
@@ -86,7 +77,7 @@ class Main extends React.Component{
         }
     }
 
-    function draw() {
+    draw() {
         context.fillStyle = '#fff';
         context.fillRect(0, 0, canvas.width, canvas.height);
         this.drawMatrix(board.matrix, {x: 0, y: 0}) //Drawing the arena
@@ -94,7 +85,7 @@ class Main extends React.Component{
     }
 
     //Drawing a matrix
-    function drawMatrix(matrix, offset){
+    drawMatrix(matrix, offset){
         matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if(value !== 0){
@@ -109,51 +100,51 @@ class Main extends React.Component{
     });
     }
 
-    const updateScore = () => {
+    updateScore(){
         document.getElementById('score').innerText = "Score: " + player.score;
     }
 
-    const player = Player;
-    const tetris = Tetris;
-    const board = Board(12, 20);
-
-    document.addEventListener('keydown', event => {
-        //Left
-        if(event.keyCode === 37)
-        {
-            player.move(-1);
-        }
-        //Right
-        else if(event.keyCode === 39)
-        {
-            player.move(1);
-        }
-        //Down
-        else if(event.keyCode === 40)
-        {
-            player.drop();
-        }
-        //Up
-        else if(event.keyCode === 38)
-        {
-            player.rotate(1);
-        }
-        //Z
-        else if(event.keyCode === 90){
-            player.rotate(-1);
-        }
-        //Space Bar
-        else if(event.keyCode === 32)
-        {
-            player.hardDrop();
-        }
-    })
+    player = Player;
+    board = Board(12, 20);
+    componentDidMount() {
+        document.addEventListener('keydown', event => {
+            //Left
+            if(event.keyCode === 37)
+            {
+                player.move(-1);
+            }
+            //Right
+            else if(event.keyCode === 39)
+            {
+                player.move(1);
+            }
+            //Down
+            else if(event.keyCode === 40)
+            {
+                player.drop();
+            }
+            //Up
+            else if(event.keyCode === 38)
+            {
+                player.rotate(1);
+            }
+            //Z
+            else if(event.keyCode === 90){
+                player.rotate(-1);
+            }
+            //Space Bar
+            else if(event.keyCode === 32)
+            {
+                player.hardDrop();
+            }
+        })
+    }
 
     update();
     updateScore();
 
     render() {
-            return <div></div>
+        return <div></div>;
     }
 }
 

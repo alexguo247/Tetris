@@ -1,74 +1,7 @@
 <h1>Tetris Made With React</h1>
 
-As a huge fan and longtime Tetris player, I wanted to learn more about React while creating something familiar and interactive. Although I know now that the React framework is not suited towards playing games, it was a fun experience. The demo is shown below.
+As a huge fan and longtime Tetris player, I wanted to learn more about React while creating something familiar and interactive. Although I know now that the React framework is not suited towards playing games, it was an enjoyable experience. I used 3 main Class components (Board, Player, and a Main Class to hold global variables). The Board Class creates the overall tetris board, represented by a 12 x 20 matrix filled with 0's. The principle behind this React game is modifying the board matrix and having the pieces represented by different numbers inside the matrix. The board has 4 functions: a clear function to clear one row of lines, a collide function to check whether the player's position interferes with the board dimensions or pieces already put on the board, a sweep function when a player clears a line, and a merge function to combine the board matrix and the player matrix. The Player Class holds the player's position along with any functions that allow the Player to interact with the piece (i.e. moving, rotating, dropping/hard dropping, etc.) These were then exported to the React App and then rendered onto the website. The Board / Tetris pieces were drawn using HTML canvas and updated using the requestAnimationFrame method. 
+
+The demo is shown below. 
 
 ![Tetris-Demo](https://media.giphy.com/media/UUys0oD6g8vi3UAgb6/giphy.gif)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
